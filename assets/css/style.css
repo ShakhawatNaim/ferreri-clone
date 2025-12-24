@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+}
+.header {
+  position: relative;
+  height: 100vh;
+}
+.header video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.navbar {
+  width: 100%;
+  padding: 10px 32px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+}
+.nav-menu .nav-brand img {
+  padding-top: 8px;
+  width: 36px;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.menu-items a,
+.toggle-button a,
+.search-button a {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.toggle-button {
+  display: none;
+}
+/* hero section styles */
+.hero-container {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+}
+.hero-container .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+}
+.hero-container .hero-content h1 {
+  font-size: 36px;
+  animation-delay: 1s;
+  animation: slideTop 0.5s ease forwards;
+}
+.hero-container .hero-content h3 {
+  font-size: 16px;
+  animation: slideTop 1s ease forwards;
+}
+.hero-container .hero-content button {
+  animation-delay: 1.2s;
+  animation: slideTop 0.6s ease forwards;
+}
+/* Button styles for global uses */
+.global-button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 1s;
+}
+.global-button i {
+  margin-left: 8px;
+  padding: 10px 22px 10px 12px;
+  border: 2px solid rgb(160, 160, 160);
+  border-radius: 50%;
+  position: relative;
+}
+/* .global-button i::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-color: blueviolet;
+  z-index: -1;
+  border-radius: 50%;
+
+  opacity: 0;
+  transition: 0.5s;
+}
+.global-button:hover i::after {
+  opacity: 1;
+  border: 2px solid red;
+  animation: circle 1s ease forwards;
+}
+.global-button:hover span {
+  border-bottom: 2px solid #fff;
+}
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+} */
+/* Blog area styles */
+.blog-area {
+  padding: 60px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.blog-content h4 {
+  max-width: 280px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.blog-content p {
+  margin: 30px 0;
+  max-width: 400px;
+}
+.blog-area .blog-content .global-button {
+  color: #181818;
+}
+.blog-image {
+  max-width: 492px;
+}
+.blog-image img {
+  max-width: 100%;
+  height: auto;
+}
+/* Category section styles */
+
+/* Newsletter section styles */
+.newsletter-area {
+  padding: 96px 32px;
+  background-color: #303030;
+  text-align: center;
+}
+.newsletter-area p {
+  color: #fff;
+  margin-bottom: 20px;
+}
+.newsletter-area .subscribe-btn {
+  width: 250px;
+  height: 64px;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  background: linear-gradient(to top, #ec2203, #bb0101);
+  cursor: pointer;
+}
+.newsletter-area .subscribe-btn:hover {
+  background: linear-gradient(to bottom, #8d1402, #be0101);
+}
+/* Animations */
+@keyframes slideTop {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media (max-width: 900px) {
+  .navbar {
+    padding: 8px 5%;
+  }
+  .toggle-button {
+    display: block;
+  }
+  .toggle-button a,
+  .search-button a {
+    margin: 0 0;
+  }
+  .menu-items {
+    display: none;
+  }
+  .hero-container .hero-content {
+    gap: 12px;
+  }
+  .hero-container .hero-content h1 {
+    font-size: 22px;
+  }
+  .hero-container .hero-content h3 {
+    font-size: 14px;
+  }
+  .blog-area {
+    flex-direction: column-reverse;
+    padding: 20px 5%;
+    align-items: start;
+  }
+  .blog-content h4 {
+    max-width: 100%;
+  }
+  .blog-content p {
+    max-width: 100%;
+  }
+  .blog-image img {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .hero-container .hero-content h1 {
+    font-size: 16px;
+  }
+  .blog-content h4 {
+    font-size: 24px;
+  }
+  .newsletter-area .subscribe-btn {
+    width: 150px;
+    height: 40px;
+  }
+}
